@@ -1,0 +1,15 @@
+body {
+  width:100%;
+  background:#F1F4F9;
+  margin-top:50px;
+  color:#777;
+  font-family:'Open Sans', sans-serif !important;
+}
+
+label {
+}
+
+.container {
+  padding:0;
+}
+

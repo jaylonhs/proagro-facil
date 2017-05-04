@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proagro</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="assets/css/breadcrumb.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/header-menu.css">
+    <link rel="stylesheet" href="assets/css/label-with-tooltip.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div>
+    <nav class="navbar navbar-default navigation-clean">
+        <div class="container">
+            <div><img class="navbar-brand" src="assets/img/logo_proagro.png" /></div>
+            <div>
+                <ul class="primary-menu">
+                    <li>
+                        <div class="menu-dropdown">
+                            <a>COP</a>
+                            <ul class="vertical-menu-list">
+                                <li class="subtitle">Controle</li>
+                                <li><a>Comunicações de perdas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-dropdown"><a>RCP</a>
+                            <ul class="vertical-menu-list">
+                                <li class="subtitle">Controle</li>
+                                <li><a>Comprovações de perdas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-dropdown">
+                            <a>Pagamentos</a>
+                            <ul class="vertical-menu-list">
+                                <li class="subtitle">Controle</li>
+                                <li><a>Julgamentos</a></li>
+                                <li><a>Pagamentos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="secondary-menu">
+                    <li>
+                        <div class="menu-dropdown">
+                            <a><i class="glyphicon glyphicon-user"></i></a>
+                            <ul class="vertical-menu-list">
+                                <li class="subtitle">Cresol Central</li>
+                                <li><a>Meus dados</a></li>
+                                <li><a>Meu plano</a></li>
+                                <li><a>Sair</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="divider">|</span>
+                    </li>
+                    <li>
+                        <div class="menu-dropdown">
+                            <a>Ajuda</a>
+                            <ul class="vertical-menu-list">
+                                <li><a>Vídeos explicativos</a></li>
+                                <li><a>Central de atendimento</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+    <div class="container">
+    <ul class="breadcrumb">
+        <li>
+            <a>Início</a>
+        </li>
+        <li>
+            <a>Julgamentos</a>
+        </li>
+        <li class="active">
+            Julgar solicitação de cobertura
+        </li>
+    </ul>
+</div>
+    <div class="container" style="margin-bottom:20px;">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div>
+                    <div class="primary-title first">
+                        <label>DECISÃO </label>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                            <label>Data do primeiro julgamento</label>
+                            <label class="label label-default">Preenche ao confirmar o 1º julgamento</label>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                            <label>Data da última decisão</label>
+                            <label class="label label-default">Sempre é a data do último julgamento</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-5">
+                            <label>Instância </label>
+                            <select class="form-control">
+                                <option value="5" selected="">Julgamento pelo agente</option>
+                                <option value="6">Revisão pelo agente</option>
+                                <option value="7">Revisão pela CER</option>
+                                <option value="8">Revisão por determinação judicial</option>
+                                <option value="9">Revisão por determinação do BACEN</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Decisão </label>
+                            <select class="form-control">
+                                <option value="2" selected="">Deferido</option>
+                                <option value="3">Indeferido</option>
+                                <option value="4">Desistido</option>
+                                <option value="5">Desconhecido 1</option>
+                                <option value="6">Desconhecido 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="primary-title">
+                        <label>Comprovação do orçamento</label>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Orçamento enquadrado</label>
+                            <div id="orcamento-enquadrado" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Crédito de custeio">R$ 0,00</span> de crédito de custeio 
+    <br><span class="operator">+</span><br>
+    <span class="tag-var var-2" title="Recursos próprios">R$ 0,00</span> de recursos próprios
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Orç. ajustado pela área </label>
+                            <div id="orcamento-ajustado" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Crédito de custeio">R$ 0,00</span> de crédito de custeio sobre área cultivada 
+    <br><span class="operator">+</span><br>
+    <span class="tag-var var-2" title="Recursos próprios">R$ 0,00</span> de recursos próprios sobre área cultivada
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Valor glosado sobre crédito de custeio</label>
+                            <input type="text" id="input-glosa-credito-custeio" class="form-control input-money">
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Valor glosado sobre recursos próprios</label>
+                            <input type="text" id="input-glosa-recursos-proprios" class="form-control align-right input-money">
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Crédito de custeio utilizado </label>
+                            <div id="credito-custeio-utilizado" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Crédito de custeio ajustado">R$ 0,00</span> de crédito de custeio sobre a área cultivada
+    <br><span class="operator">-</span><br>
+    <span class="tag-var var-2" title="Crédito de custeio glosado">R$ 0,00</span> glosados sobre a área cultivada
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Recursos próprios utilizados </label>
+                            <div id="recursos-proprios-utilizados" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Recursos próprios ajustados">R$ 0,00</span> de recursos próprios sobre a área cultivada
+    <br><span class="operator">-</span><br>
+    <span class="tag-var var-2" title="Recursos próprios glosados">R$ 0,00</span> glosados sobre a área cultivada
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Orç. comprovado ajustado pela área </label>
+                            <div id="orcamento-comprovado-ajustado" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Crédito de custeio utilizado">R$ 0,00</span> de crédito de custeio utilizado
+    <br><span class="operator">+</span><br>
+    <span class="tag-var var-2" title="Recursos próprios utilizados">R$ 0,00</span> de recursos próprios utilizados
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>GRM ajustada ao orçamento comprovado </label>
+                            <div id="grm-ajustada" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="GRM">R$ 0,00</span> de GRM
+    <br><span class="operator">x</span><br>
+    <span class="tag-var var-2" title="Orçamento comprovado ajustado pela área">R$ 0,00</span> de orç. comprovado ajustado pela área 
+    <br><span class="operator">/</span><br>
+    <span class="tag-var var-3" title="Orçamento enquadrado">R$ 0,00</span> de orçamento enquadrado
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Parcela de inv. ajustada ao orçamento comprovado </label>
+                            <div id="parcela-investimento-ajustada" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Parcela de investimento">R$ 0,00</span> de parcela de investimento
+    <br><span class="operator">x</span><br>
+    <span class="tag-var var-2" title="Orçamento comprovado ajustado pela área">R$ 0,00</span> de orç. comprovado ajustado pela área 
+    <br><span class="operator">/</span><br>
+    <span class="tag-var var-3" title="Orçamento enquadrado">R$ 0,00</span> de orçamento enquadrado
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Encargos financeiros sobre o crédito utilizado </label>
+                            <div id="encargos-financeiros" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Percentual de juros">0%</span> (proporção dos juros anuais, desde a liberação da contratação) sobre
+    <span class="tag-var var-2" title="Crédito de custeio utilizado">R$ 0,00</span> do crédito de custeio utilizado
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                            <label>Total glosado ajustado pela área</label>
+                            <div id="total-glosado-ajustado" class="label-with-tooltip left">
+                                <label class="negative valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Orçamento ajustado pela área">R$ 0,00</span> de orçamento ajustado pela área
+    <br><span class="operator">-</span><br>
+    <span class="tag-var var-2" title="Orçamento comprovado ajutado pela área">R$ 0,00</span> de orçamento comprovado ajustado pela área
+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Perdas não amparadas </label>
+                            <input type="text" id="input-perdas-nao-amparadas" class="form-control align-right input-money">
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Receitas consideradas </label>
+                            <input type="text" id="receitas-consideradas" class="form-control align-right input-money">
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-12">
+                            <label>Demais deduções </label>
+                            <div id="demais-deducoes" class="label-with-tooltip left">
+                                <label class="negative valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Perdas não amparadas">R$ 0,00</span> de perdas não amparadas
+    <br><span class="operator">+</span><br>
+    <span class="tag-var var-2" title="Receitas consideradas">R$ 0,00</span> de receitas consideradas
+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="primary-title">
+                        <label>distribuição da cobertura</label>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Base de cálculo de cobertura referente ao orçamento </label>
+                            <div id="base-calculo-cobertura" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Orçamento comprovado ajustado pela área">R$ 0,00</span> de orç. comprovado ajustado pela área
+    <br><span class="operator">+</span><br>
+    <span class="tag-var var-2" title="Encargos financeiros sobre o crédito utilizado">R$ 0,00</span> de encargos financeiros sobre o crédito utilizado
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Limite de cobertura referente ao orçamento </label>
+                            <div id="limite-cobertura" class="label-with-tooltip left">
+                                <label class="valor">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var var-1" title="Orçamento comprovado ajustado pela área">R$ 0,00</span> de orç. comprovado ajustado pela área
+    <br><span class="operator">+</span><br>
+    <span class="tag-var var-2" title="Encargos financeiros sobre o crédito utilizado">R$ 0,00</span> de encargos financeiros sobre o crédito utilizado
+    <br><span class="operator">-</span><br>
+    <span class="tag-var var-3" title="Demais deduções">R$ 0,00</span> de demais deduções
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label> Redutor de cobertura</label>
+                            <div class="label-with-tooltip left">
+                                <label>0% </label>
+                                <span class="tooltip">
+    Por <span class="tag-var" title="Número de indenizações">3</span> indenizações do Proagro nos últimos 36 meses
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Redução de cobertura </label>
+                            <div class="label-with-tooltip left">
+                                <label>R$ 267,02</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Redutor de cobertura">30%</span> sobre
+    <span class="tag-var" title="Limite de cobertura referente ao orçamento">R$ 890,07</span> de limite de cobertura referente ao orçamento
+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura do crédito de custeio </label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 862,23</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura devida">R$ 7.021,54</span> de cobertura devida
+    <br><span class="operator">x</span><br>
+    (<span class="tag-var" title="Crédito de custeio utilizado">R$ 869,00</span> de crédito de custeio utilizado
+    <span class="operator">+</span>
+    <span class="tag-var" title="Encargos financeiros sobre o crédito utilizado">R$ 33,02</span> de encargos financeiros sobre o crédito utilizado)
+    <br><span class="operator">/</span><br>
+    <span class="tag-var" title="Total de cobertura">R$ 7.345,58</span> do total de itens cobertos
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura de recursos próprios </label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 43,08</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura devida">R$ 7.021,54</span> de cobertura devida
+    <br><span class="operator">x</span><br>
+    <span class="tag-var" title="Recursos próprios utilizados">R$ 45,07</span> de recursos próprios utilizados
+    <br><span class="operator">/</span><br>
+    <span class="tag-var" title="Total de cobertura">R$ 7.345,58</span> do total de itens cobertos
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura da GRM</label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 6.116,23</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura devida">R$ 7.021,54</span> de cobertura devida
+    <br><span class="operator">x</span><br>
+    <span class="tag-var" title="GRM ajustada ao orçamento comprovado">R$ 6.398,49</span> de GRM ajustada ao orçamento comprovado
+    <br><span class="operator">/</span><br>
+    <span class="tag-var" title="Total de cobertura">R$ 7.345,58</span> do total de itens cobertos
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura da parcela de inv. </label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura devida">R$ 7.021,54</span> de cobertura devida
+    <br><span class="operator">x</span><br>
+    <span class="tag-var" title="Parcela de investimento ajustada ao orçamento comprovado">R$ 0,00</span> de parcela de inv. ajustada ao orçamento comprovado
+    <br><span class="operator">/</span><br>
+    <span class="tag-var" title="Total de cobertura">R$ 7.345,58</span> do total de itens cobertos
+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura devida </label>
+                            <div class="label-with-tooltip left">
+                                <label>R$ 7.021,54</label>
+                                <span class="tooltip">
+    (<span class="tag-var" title="Limite de cobertura referente ao orçamento">R$ 890,07</span> de limite de cobertura referente ao orçamento
+    <span class="operator">+</span>
+    <span class="tag-var" title="GRM ajustada ao orçamento comprovado">R$ 6.398,49</span> de GRM ajustada ao orçamento comprovado
+    <span class="operator">+</span>
+    <span class="tag-var" title="Parcela de investimento ajustada ao orçamento comprovado">R$ 0,00</span> de parcela de inv. ajustada ao orçamento comprovado)
+    <br><span class="operator">-</span><br>
+    <span class="tag-var" title="Redução na cobertura">R$ 267,02</span> de redução de cobertura
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Despesas com remuneração do perito</label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 187,00</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Percentual de remuneração">1%</span> sobre
+    (<span class="tag-var" title="Valor financiado">R$ 950,00</span> de valor financiado
+    <span class="operator">+</span>
+    <span class="tag-var" title="Garantia de renda mínima">R$ 150,00</span> de GRM)
+    <br><span class="operator">+</span><br>
+    <span class="tag-var" title="Valor por visita extra">R$ 80,00</span> por visita extra
+    <br><span class="operator">-</span><br>
+    <span class="tag-var" title="Valor por visita extra">R$ 3,00</span> por 1 dia de atraso
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Demais despesas da comprovação de perdas</label>
+                            <input type="text" class="form-control align-right input-money">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="primary-title first">
+                        <label>cobertura do último julgamento</label>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura do crédito de custeio </label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 885,06</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura devida">R$ 7.011,27</span> de cobertura devida
+    <br><span class="operator">x</span><br>
+    (<span class="tag-var" title="Crédito de custeio utilizado">R$ 869,00</span> de crédito de custeio utilizado
+    <span class="operator">+</span>
+    <span class="tag-var" title="Encargos financeiros sobre o crédito utilizado">R$ 33,02</span> de encargos financeiros sobre o crédito utilizado)
+    <br><span class="operator">/</span><br>
+    <span class="tag-var" title="Total de cobertura">R$ 7.145,58</span> do total de itens cobertos
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura de recursos próprios </label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 44,22</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura devida">R$ 7.011,27</span> de cobertura devida
+    <br><span class="operator">x</span><br>
+    <span class="tag-var" title="Recursos próprios utilizados">R$ 45,07</span> de recursos próprios utilizados
+    <br><span class="operator">/</span><br>
+    <span class="tag-var" title="Total de cobertura">R$ 7.145,58</span> do total de itens cobertos
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura da GRM</label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 6.278,22</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura devida">R$ 7.011,27</span> de cobertura devida
+    <br><span class="operator">x</span><br>
+    <span class="tag-var" title="GRM ajustada ao orçamento comprovado">R$ 6.398,49</span> de GRM ajustada ao orçamento comprovado
+    <br><span class="operator">/</span><br>
+    <span class="tag-var" title="Total de cobertura">R$ 7.145,58</span> do total de itens cobertos
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Cobertura da parcela de inv. </label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 0,00</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura devida">R$ 7.021,54</span> de cobertura devida
+    <br><span class="operator">x</span><br>
+    <span class="tag-var" title="Parcela de investimento ajustada ao orçamento comprovado">R$ 0,00</span> de parcela de inv. ajustada ao orçamento comprovado
+    <br><span class="operator">/</span><br>
+    <span class="tag-var" title="Total de cobertura">R$ 7.345,58</span> do total de itens cobertos
+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Despesas com remuneração do perito</label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 107,00</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Percentual de remuneração">1%</span> sobre
+    (<span class="tag-var" title="Valor financiado">R$ 950,00</span> de valor financiado
+    <span class="operator">+</span>
+    <span class="tag-var" title="Garantia de renda mínima">R$ 150,00</span> de GRM)
+    <br><span class="operator">-</span><br>
+    <span class="tag-var" title="Valor por visita extra">R$ 3,00</span> por 1 dia de atraso
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Demais despesas da comprovação de perdas </label><span class="label label-default form-simple-label positive">R$ 0,00</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="primary-title first">
+                        <label>DEVOLUÇÕES E COMPLEMENTOS SOBRE A COBERTURA DO ÚLTIMO JULGAMENTO</label>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Devolução da cobertura de crédito de custeio </label>
+                            <div class="label-with-tooltip left">
+                                <label class="negative">R$ 22,83</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura de crédito de custeio deste julgamento">R$ 862,23</span> de cobertura de crédito de custeio deste julgamento
+    <br><span class="operator">-</span><br>
+    <span class="tag-var" title="Cobertura de crédito de custeio do último julgamento">R$ 885,06</span> de cobertura de crédito de custeio do último julgamento
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Devolução da cobertura de recursos próprios </label>
+                            <div class="label-with-tooltip left">
+                                <label class="negative">R$ 1,14</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura de recursos próprios deste julgamento">R$ 43,08</span> de cobertura de recursos próprios deste julgamento
+    <br><span class="operator">-</span><br>
+    <span class="tag-var" title="Cobertura de recursos próprios do último julgamento">R$ 44,22</span> de cobertura de recursos próprios do último julgamento
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Devolução da cobertura da GRM</label>
+                            <div class="label-with-tooltip left">
+                                <label class="negative">R$ 161,99</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Cobertura da GRM deste julgamento">R$ 6.116,23</span> de cobertura da GRM deste julgamento
+    <br><span class="operator">-</span><br>
+    <span class="tag-var" title="Cobertura da GRM do último julgamento">R$ 6.278,22</span> de cobertura da GRM do último julgamento
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Devolução da cobertura da parcela de investimento </label>
+                            <div class="label-with-tooltip left">
+                                <label>R$ 0,00</label>
+                                <span class="tooltip">
+    Não houve alteração no valor referente à esta cobertura.
+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Complemento das despesas com remuneração do perito </label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 80,00</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Despesas com remuneração do perito neste julgamento">R$ 187,00</span> de despesas com remuneração do perito neste julgamento
+    <br><span class="operator">-</span><br>
+    <span class="tag-var" title="Despesas com remuneração do perito no último julgamento">R$ 107,00</span> de despesas com remuneração do perito no último julgamento
+</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3 col-sm-4 col-xs-6">
+                            <label>Comp. das demais despesas da comprovação de perdas</label>
+                            <div class="label-with-tooltip left">
+                                <label class="positive">R$ 58,39</label>
+                                <span class="tooltip">
+    <span class="tag-var" title="Demais despesas da comprovação de perdas neste julgamento">R$ 58,39</span> de demais despesas da comprovação de perdas neste julgamento
+    <br><span class="operator">-</span><br>
+    <span class="tag-var" title="Demais despesas da comprovação de perdas no último julgamento">R$ 0,00</span> de demais despesas da comprovação de perdas no último julgamento
+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default secondary-button col-md-3 col-sm-3 col-xs-12" type="button">Cancelar </button>
+        <button class="btn btn-default pull-right primary-button col-md-3 col-sm-4 col-xs-12" type="button">Salvar e confirmar julgamento</button>
+        <button class="btn btn-default pull-right secondary-button col-md-3 col-sm-3 col-xs-12" type="button">Salvar </button>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/calculos-sumula.js"></script>
+    <script src="assets/js/header-menu.js"></script>
+    <script src="assets/js/input-money.js"></script>
+</body>
+
+</html>

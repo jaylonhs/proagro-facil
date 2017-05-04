@@ -1,0 +1,177 @@
+.primary-button {
+  background:#4CAF50;
+  color:#FFF;
+  border-color:#4CAF50;
+}
+
+.primary-button + .secondary-button {
+  margin-right:10px;
+}
+
+.primary-button:hover {
+  background:rgba(74,186,88,0.8);
+  color:#FFF;
+  border-color:#4CAF50;
+}
+
+.primary-button:active, .primary-button:focus, .primary-button:active:hover {
+  box-shadow:inset 0 1px 3px 0 #387A42;
+  background:#4CAF50;
+  color:#FFF;
+}
+
+.primary-button, .secondary-button {
+  box-shadow:none;
+  padding:10px 15px;
+  min-width:135px;
+  font-weight:500;
+  text-shadow:none;
+  border-radius:3px;
+}
+
+.secondary-button {
+  border-color:#CFDBE2;
+  background:#F8FAFC;
+  min-width:135px;
+  color:#385A7B;
+}
+
+.secondary-button:hover {
+  background:#FFF;
+  border-color:#81a0be;
+  color:#385A7B;
+}
+
+.primary-title {
+  color:rgba(0, 0, 0, 0.3);
+  text-transform:uppercase;
+  margin-bottom:15px;
+  margin-top:20px;
+}
+
+.primary-title hr {
+  border-top:2px dotted #E9E9E9;
+  margin:0;
+}
+
+.primary-title.first {
+  margin-top:0;
+}
+
+.label-with-tooltip {
+  padding-top:7px;
+  margin-top:-5px;
+  top:-5px;
+  position:relative;
+}
+
+.label-with-tooltip label {
+  border-bottom:1px dotted #A5D6A7;
+}
+
+.form-simple-label {
+  top:-4px;
+  position:relative;
+  display:table;
+}
+
+.label-with-tooltip label, .form-simple-label {
+  color:#777;
+  font-weight:normal;
+  line-height:24px;
+  font-size:15px;
+  margin-top:-2px;
+  position:relative;
+  background:none;
+  padding:0;
+}
+
+.label-with-tooltip .tooltip {
+  display:none;
+  animation:tooltipIn 350ms linear forwards;
+  background:rgba(0, 0, 0, 0.8);
+  border-radius:3px;
+  bottom:35px;
+  color:#FFF;
+  display:none;
+  line-height:18px;
+  padding:10px;
+  position:absolute;
+  text-align:left;
+  z-index:999;
+  -moz-animation:tooltipIn 250ms linear forwards;
+  -webkit-animation:tooltipIn 250ms linear forwards;
+  width:220px;
+}
+
+.label-with-tooltip:hover .tooltip:before {
+  left:13px !important;
+}
+
+.label-with-tooltip .tooltip:before {
+  content:"";
+  display:block;
+  position:absolute;
+  right:13px;
+  bottom:-10px;
+  width:0px;
+  height:0px;
+  border-style:solid;
+  border-width:5px 5px 5px 5px;
+  border-color:rgba(0, 0, 0, 0.8) transparent transparent;
+}
+
+.label-with-tooltip:hover .tooltip {
+  display:block;
+}
+
+.tag-var {
+  border-bottom:1px dotted #FF9800;
+  color:#FF9800;
+}
+
+.label-with-tooltip label.negative {
+  color:#EF5350;
+}
+
+.label-with-tooltip label.positive {
+  color:#66BB6A;
+}
+
+.operator {
+  border-radius:50%;
+  border:1px solid #FF9800;
+  width:21px;
+  height:21px;
+  display:inline-block;
+  text-align:center;
+  background:rgba(255, 152, 0, 0.5);
+  line-height:20px;
+}
+
+@keyframes tooltipIn {
+  0% {
+    -moz-transform:translate(0, -10px);
+    -ms-transform:translate(0, -10px);
+    -webkit-transform:translate(0, -10px);
+    transform:translate(0, -10px);
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity:0;
+  }
+  100% {
+    -moz-transform:translate(0, 0);
+    -ms-transform:translate(0, 0);
+    -webkit-transform:translate(0, 0);
+    transform:translate(0, 0);
+    filter:progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity:1;
+  }
+}
+
+.input-money {
+  text-align:right;
+  border:1px solid #CCCCCC;
+  height:35px;
+  border-radius:4px;
+}
+
